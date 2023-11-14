@@ -64,6 +64,8 @@ export default function ViewTask() {
           onOpenChange={closeModal}
           className="text-black"
           backdrop="opaque"
+          placement="center"
+
         >
           <ModalContent className="font-quicksand">
             {(onClose) => (

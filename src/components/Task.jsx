@@ -25,19 +25,18 @@ export default function Task() {
   const [description, setDescription] = useState("");
   const { addTask } = useTaskContext();
 
-  const handleClick = (onClose) => { 
-    if (title.trim() !== '' && description.trim() !== '') {
+  const handleClick = (onClose) => {
+    if (title.trim() !== "" && description.trim() !== "") {
       addTask({ title, description });
-      setTitle('');
-      setDescription('');
-    }   
+      setTitle("");
+      setDescription("");
+    }
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       onClose();
     }, 100);
   };
-  
 
   return (
     <>
@@ -48,7 +47,12 @@ export default function Task() {
               <BreadcrumbItem>Home</BreadcrumbItem>
               <BreadcrumbItem>Task</BreadcrumbItem>
             </Breadcrumbs>
-            <Button onPress={onOpen} size="sm" startContent={<Plus />} className="font-bold text-sm">
+            <Button
+              onClick={onOpen}
+              size="sm"
+              startContent={<Plus />}
+              className="font-bold text-sm"
+            >
               New Task
             </Button>
           </div>
@@ -57,12 +61,13 @@ export default function Task() {
           <ViewTask />
         </div>
       </div>
-      
+
       <Modal
         size="xl"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         className="text-black font-quicksand"
+        placement="center"
       >
         <ModalContent>
           {(onClose) => (
@@ -107,6 +112,7 @@ export default function Task() {
           )}
         </ModalContent>
       </Modal>
+
     </>
   );
 }
