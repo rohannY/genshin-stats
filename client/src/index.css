@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body,
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-gradient-to-br from-neutral-900 via-slate-900 to-gray-800 scroll-smooth;
+}
