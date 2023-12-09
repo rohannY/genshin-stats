@@ -20,7 +20,7 @@ export default function Home() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/uid/${uid}`); // replace with your API endpoint
+      const response = await fetch(`https://genshin-stats-server.vercel.app/uid/${uid}`); // replace with your API endpoint
       if (!response.ok) {
         console.log(response);
         setError("Profile Does not exist");
