@@ -96,16 +96,16 @@ export default function Home() {
         <Spinner label="Loading..." color="warning" />
       ) : (
         data && (
-          <div className="my-10 py-10 px-10 w-1/2 rounded-2xl border border-teal-600/40 bg-teal-700/20 backdrop-blur-2xl drop-shadow-2xl">
+          <div className="my-10 sm:p-10 sm:w-1/2 rounded-2xl border border-teal-600/40 bg-teal-700/20 backdrop-blur-2xl drop-shadow-2xl">
             {
-              <div className={`flex w-full p-4 rounded-xl`} style={customStyle}>
+              <div className={`flex w-full p-4 rounded-xl lg:flex-nowrap`} style={customStyle}>
                 <Avatar
                   color="secondary"
                   isBordered
-                  className="flex w-12 h-12 bg-blur"
+                  className="hidden sm:flex w-12 h-12 bg-blur"
                 ></Avatar>
 
-                <div className="px-5 flex space-x-5">
+                <div className="sm:px-5 flex space-x-5 text-sm sm:text-base">
                   <div>
                     <p>{data.user.userName}</p>
                     <p>World Level : {data.user.worldLevel}</p>
@@ -119,7 +119,7 @@ export default function Home() {
             }
 
             <div className="my-4">
-              <div className="px-8 py-4 flex justify-between">
+              <div className="px-8 py-4 grid grid-cols-4 gap-x-4 gap-y-4 xl:flex justify-between">
                 {data.chars.map((item, index) => (
                   <Avatar
                     className="cursor-pointer hover:ring ring-green-500 bg-white"
@@ -136,7 +136,7 @@ export default function Home() {
               {selectedCharacter && (
                 <div className="col-span-10">
                   {console.log(selectedCharacter)}
-                  <div className="px-10 py-3 ">
+                  <div className="px-6 xl:px-10 py-3 ">
                     <table class="table-auto w-1/2 mx-2">
                       <tbody>
                         <tr>
